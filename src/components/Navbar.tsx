@@ -15,7 +15,11 @@ const Navbar: React.FC = () => {
 								<img
 									src="/logo.png"
 									alt="Logo"
-									style={{ width: "7vw", height: "auto" }}
+									className="img-fluid"
+									style={{
+										width: "7vw",
+										height: "auto",
+									}}
 								/>
 							</Link>
 						</li>

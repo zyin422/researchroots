@@ -51,6 +51,10 @@
   color: #00bf63;
 }
 
+.btn-custom-green {
+  background-color: #6cf8b4 !important;
+}
+
 .scroll-wrapper {
   overflow: hidden;
   white-space: nowrap;

@@ -7,13 +7,14 @@ const About: React.FC = () => {
 			id="about"
 		>
 			<div className="flex-fill">
-				<h2 className="text-custom-green mb-3">About Us</h2>
+				<h2 className="text-custom-green mb-3">Who Are We?</h2>
 				<p>
-					Our mission is to empower students by providing more
-					affordable high quality research opportunities that promote
-					academic growth and real world experience. We strive to
-					break financial barriers so that every dedicated student can
-					thrive and gain experience in their field of interest.
+					<strong>Research Roots</strong> is a student-focused
+					research mentorship program that helps high school students
+					dive into research aligned with their academic interests. We
+					provide personalized mentorship, guidance on publishing or
+					presenting research, and comprehensive college counseling —
+					all at an affordable price compared to other companies.
 				</p>
 			</div>
 			<img

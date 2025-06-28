@@ -1,9 +1,12 @@
 import React from "react";
 
 const quotes = [
-	"Through Research Roots, I found my passion for research.",
-	"I connected with a mentor who lent me guidance along my research journey.",
-	"Research Roots gave me confidence for my future.",
+	["Through Research Roots, I found my passion for research.", "Jiwoo Park"],
+	[
+		"I connected with a mentor who lent me guidance along my research journey.",
+		"Alejandra Lopez Hernandez",
+	],
+	["Research Roots gave me confidence for my future.", "Tyler James Carter"],
 ];
 
 const Testimonials: React.FC = () => {
@@ -15,9 +18,9 @@ const Testimonials: React.FC = () => {
 					<div className="testimonial-marquee">
 						{quotes.map((quote, i) => (
 							<div key={i} className="testimonial-item">
-								<p>"{quote}"</p>
+								<p>"{quote[0]}"</p>
 								<span className="d-block mt-3">
-									— Student {i + 1}
+									— {quote[1]}
 								</span>
 							</div>
 						))}
