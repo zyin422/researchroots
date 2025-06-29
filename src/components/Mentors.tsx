@@ -1,55 +1,52 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-interface Mentor {
-	name: string;
-	subject: string;
-	img: string;
-	bio: string;
-}
+const highlights = [
+	{
+		icon: "bi bi-mortarboard",
+		title: "Top Academic Honors",
+		description:
+			"National STEM awards, AI and biomedical publications, and research under professors from UC Berkeley, USC, and Harvard.",
+	},
+	{
+		icon: "bi bi-lightbulb",
+		title: "Founders & Innovators",
+		description:
+			"Startups in neurotech, environmental advocacy, and global nonprofits — featured in national media and backed by institutions.",
+	},
+	{
+		icon: "bi bi-briefcase",
+		title: "Professional Experience",
+		description:
+			"Consulted for Samsung and IKEA, interned at venture firms, and led brand and strategy at high-growth startups.",
+	},
+	{
+		icon: "bi bi-diagram-3",
+		title: "Interdisciplinary Strength",
+		description:
+			"Expertise across CS, neuroscience, business, bioengineering, and public policy. Mentors guide complex, cross-cutting projects.",
+	},
+	{
+		icon: "bi bi-globe",
+		title: "Global Impact",
+		description:
+			"Led international teams with 250+ volunteers, earned '20 Under 20' honors, and impacted students across multiple continents.",
+	},
+];
 
 const Mentors: React.FC = () => {
-	const [mentors, setMentors] = useState<Mentor[]>([]);
-
-	useEffect(() => {
-		fetch("/mentors.json")
-			.then((res) => res.json())
-			.then(setMentors)
-			.catch((err) => console.error("Failed to load mentors:", err));
-	}, []);
-
 	return (
-		<div className="bg-color-1">
-			<section className="container py-5" id="mentors">
-				<h2 className="text-custom-green text-center mb-5">
-					Meet Our Mentors
-				</h2>
-				<div className="row g-4 justify-content-center text-center">
-					{mentors.map((mentor, index) => (
-						<div key={index} className="col-12 col-md-6 col-lg-4">
-							<div className="card h-100 shadow-sm">
-								<img
-									src={mentor.img}
-									className="card-img-top rounded-circle"
-									alt={mentor.name}
-									style={{
-										objectFit: "cover",
-										height: "250px",
-										width: "250px",
-										margin: "0 auto",
-										display: "block",
-									}}
-								/>
-								<div className="card-body">
-									<h5 className="card-title text-custom-green">
-										{mentor.name}
-									</h5>
-									{mentor.subject && (
-										<h6 className="card-subtitle mb-2 text-muted">
-											{mentor.subject}
-										</h6>
-									)}
-									<p className="card-text">{mentor.bio}</p>
+		<div className="bg-color-1 py-5" id="mentors">
+			<section className="container text-center">
+				<h2 className="text-custom-green mb-5">Our Mentors</h2>
+				<div className="row g-4 justify-content-center">
+					{highlights.map((item, index) => (
+						<div key={index} className="col-12 col-md-6 col-lg-4 ">
+							<div className="card h-100 shadow-sm p-4">
+								<div className="text-custom-green mb-3 fs-1">
+									<i className={item.icon}></i>
 								</div>
+								<h5 className="fw-bold">{item.title}</h5>
+								<p className="text-muted">{item.description}</p>
 							</div>
 						</div>
 					))}
